@@ -16,7 +16,7 @@ class Transformations {
   static ValueNotifier<Y> switchMap<X, Y>(
       ValueNotifier<X> source, ValueNotifier<Y> switchMapFunction(X source)) {
     final MediatorValueNotifier<Y> result = new MediatorValueNotifier<Y>();
-    MediatorValueNotifier<Y> mSource;
+    ValueNotifier<Y> mSource;
     result.addSource(source, () {
       ValueNotifier<Y> newValueNotifier = switchMapFunction(source.value);
       if (mSource == newValueNotifier) {

@@ -27,4 +27,4 @@ transformations 是一个转化 ValueNotifier 的工具类，实现数据监听�
    transformations:
     git:
         url: https://github.com/frasker/transformations
-        ref: 1.0.0-alpha1
+        ref: 1.0.0-alpha2
