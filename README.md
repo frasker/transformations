@@ -1,14 +1,30 @@
 # transformations
 
-A new Flutter package.
+transformations 是一个转化 ValueNotifier 的工具类，实现数据监听的流转
 
-## Getting Started
+## 如何使用
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+```
+    ValueNotifier<int> source = ValueNotifier(4);
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+    var newValueNotifier = Transformations.map(source, (n) {
+      return "test$n";
+    });
+
+    newValueNotifier.addListener(() {
+      print("new value : ${newValueNotifier.value}");
+    });
+
+    source.value = 3;
+
+    source.value = 4;
+
+    source.value = 5;
+```
+## 如何依赖
+请依赖github
+```
+   transformations:
+    git:
+        url: https://github.com/frasker/transformations
+        ref: 1.0.0-alpha1
